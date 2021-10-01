@@ -28,6 +28,12 @@ paddle_b.goto(350, 0) # start position
 paddle_b.shapesize(stretch_wid=5, stretch_len=1)
 
 # Ball
+ball = turtle.Turtle() # create turtle object
+ball.speed(0) # animation speed, set to max
+ball.shape("square")
+ball.color("white")
+ball.penup()
+ball.goto(0, 0) # start position
 
 # Main game loop
 while True:
