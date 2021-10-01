@@ -37,6 +37,15 @@ ball.goto(0, 0) # start position
 ball.dx = 0.07 # ball speed X
 ball.dy = 0.07 # ball speed Y
 
+# Pen
+pen = turtle.Turtle()
+pen.speed(0) # animation speed, set to max
+pen.color("white")
+pen.penup()
+pen.hideturtle()
+pen.goto(0, 260)
+pen.write("Player A: 0 Player B: 0", align="center", font=("Courier", 24, "normal"))
+
 # Control paddles
 def paddle_a_up():
     y = paddle_a.ycor()
