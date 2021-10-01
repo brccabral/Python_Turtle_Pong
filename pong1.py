@@ -2,6 +2,8 @@
 # turtle was already included
 import turtle
 import os
+# only on windows 
+# import winsound
 
 # wn = Window
 wn = turtle.Screen()
@@ -94,6 +96,7 @@ while True:
         ball.dy *= -1
         # the & symbol makes game not stuck when playing sound
         os.system("aplay bounce.wav&")
+        # winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
     
     if ball.ycor() < -290:
         ball.sety(-290)
