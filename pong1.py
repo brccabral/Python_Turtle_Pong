@@ -4,6 +4,12 @@ import turtle
 import os
 # only on windows 
 # import winsound
+import sys
+
+def resource_path(relative):
+    if hasattr(sys, "_MEIPASS"):
+        return os.path.join(sys._MEIPASS, relative)
+    return os.path.join(relative)
 
 # wn = Window
 wn = turtle.Screen()
@@ -95,14 +101,15 @@ while True:
         ball.sety(290)
         ball.dy *= -1
         # the & symbol makes game not stuck when playing sound
-        os.system("aplay bounce.wav&")
-        # winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
+        os.system("aplay "+resource_path("bounce.wav")+"&")
+        # winsound.PlaySound(resource_path("bounce.wav"), winsound.SND_ASYNC)
     
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
         # the & symbol makes game not stuck when playing sound
-        os.system("aplay bounce.wav&")
+        os.system("aplay "+resource_path("bounce.wav")+"&")
+        # winsound.PlaySound(resource_path("bounce.wav"), winsound.SND_ASYNC)
     
     if ball.xcor() > 390:
         ball.goto(0, 0)
